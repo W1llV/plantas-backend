@@ -26,7 +26,7 @@ app.get('/get-plants', async (req, res) => {
 app.get('/get-plants/:id', async (req, res) => {
     const id = req.params.id;
     try {
-        const response = await axios.get(`https://trefle.io/api/v1/plants/${id}?token=${TREFLE_TOKEN}`);
+        const response = await axios.get(`https://trefle.io/api/v1/species/${id}?token=${TREFLE_TOKEN}`);
         res.json(response.data.data);
     } catch (error) {
         console.error(`Error al obtener planta con ID ${id}:`, error.message);
